@@ -29,4 +29,10 @@ public class Alumno
         Nota1 = Math.Min(Nota1 + 1, 10);
         Nota2 = Math.Min(Nota2 + 1, 10);
     }
+    
+    // ETAPA 4 //
+    public override string ToString()
+    {
+        return $"{Legajo} - {Nombre} (promedio: {Promedio()})";
+    }
 }
