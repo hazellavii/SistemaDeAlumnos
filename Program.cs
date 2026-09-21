@@ -1,4 +1,24 @@
-﻿// ETAPA 6 //
+﻿// ETAPA 8 //
+
+List<Persona> personas = new List<Persona>
+{
+    new Alumno("Abi", 40123456, 1234),
+    new Profesor("Venecia", 40987654, "Programación"),
+    new Preceptor("Luchi", 40777888, "Segundo año")
+};
+
+foreach (Persona persona in personas)
+{
+    Console.WriteLine(persona.Presentarse());
+}
+
+Console.WriteLine();
+
+// Al quitar virtual de aparecen 3 errores:
+// Alumno, Profesor y Preceptor no podían usar override porque el método de Persona ya no era virtual.
+
+
+// ETAPA 6 //
 
 List<Alumno> alumnos = new List<Alumno>();
 

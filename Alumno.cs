@@ -5,7 +5,7 @@ public class Alumno : Persona
     public double Nota1 { get; private set; }
     public double Nota2 { get; private set; }
     
-    // Etapa 2 - 7 //
+    // ETAPA 2 - 7 //
     public Alumno(string nombre, int documento, int legajo)
         : base(nombre, documento)
     {
@@ -44,5 +44,11 @@ public class Alumno : Persona
         Nota1 = nota1;
         Nota2 = nota2;
         return true;
+    }
+    
+    // ETAPA 8 //
+    public override string Presentarse()
+    {
+        return $"Hola, soy {Nombre}, alumno con legajo {Legajo}.";
     }
 }
