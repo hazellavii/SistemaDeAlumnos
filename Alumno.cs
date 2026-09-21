@@ -1,15 +1,14 @@
 // ETAPA 1 //
-public class Alumno
+public class Alumno : Persona
 {
-    public string Nombre { get; set; }
     public int Legajo { get; private set; }
     public double Nota1 { get; private set; }
     public double Nota2 { get; private set; }
     
-    // ETAPA 2 //
-    public Alumno(string nombre, int legajo)
+    // Etapa 2 - 7 //
+    public Alumno(string nombre, int documento, int legajo)
+        : base(nombre, documento)
     {
-        Nombre = nombre;
         Legajo = legajo;
     }
     

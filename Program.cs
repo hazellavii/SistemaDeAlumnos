@@ -25,6 +25,9 @@ while (continuar)
         case "1":
             Console.Write("Nombre: ");
             string nombre = Console.ReadLine() ?? "";
+            
+            Console.Write("Documento: ");
+            bool documentoValido = int.TryParse(Console.ReadLine(), out int documento);
 
             Console.Write("Legajo: ");
             bool legajoValido = int.TryParse(Console.ReadLine(), out int legajo);
@@ -35,14 +38,15 @@ while (continuar)
             Console.Write("Nota 2: ");
             bool nota2Valida = double.TryParse(Console.ReadLine(), out double nota2);
 
-            if (!legajoValido || !nota1Valida || !nota2Valida)
+
+            if (!documentoValido || !legajoValido || !nota1Valida || !nota2Valida)
             {
                 Console.WriteLine("Los datos ingresados no son válidos.");
                 break;
             }
 
-            Alumno nuevoAlumno = new Alumno(nombre, legajo);
-
+            Alumno nuevoAlumno = new Alumno(nombre, documento, legajo);
+            
             bool notasCargadas = nuevoAlumno.CargarNotas(nota1, nota2);
 
             if (!notasCargadas)
