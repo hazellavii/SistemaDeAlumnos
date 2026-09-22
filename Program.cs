@@ -18,6 +18,39 @@ Console.WriteLine();
 // Alumno, Profesor y Preceptor no podían usar override porque el método de Persona ya no era virtual.
 
 
+// ETAPA 9 //
+
+Alumno alumnoExportable = new Alumno("Abi", 40123456, 1234);
+alumnoExportable.CargarNotas(8, 6);
+
+Profesor profesorExportable =
+    new Profesor("Venecia", 40987654, "Programación");
+
+Materia materia1 =
+    new Materia("prog1", "Programación I", 128);
+
+Materia materia2 =
+    new Materia("bdd1", "Base de Datos I", 96);
+
+List<IExportable> exportables = new List<IExportable>
+{
+    alumnoExportable,
+    profesorExportable,
+    materia1,
+    materia2
+};
+
+foreach (IExportable exportable in exportables)
+{
+    Console.WriteLine(exportable.ExportarLinea());
+}
+
+Console.WriteLine();
+
+// Al agregar ExportarEncabezado() a IExportable aparecieron 3 errores: Alumno, Profesor y Materia.
+// No tenian la nueva interfaz, Luego se eliminó ExportarEncabezado() como indicaba la consigna.
+
+
 // ETAPA 6 //
 
 List<Alumno> alumnos = new List<Alumno>();
